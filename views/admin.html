@@ -1,0 +1,68 @@
+<html>
+  <header>
+    <link rel="stylesheet" href="/styles.css">
+  </header>
+<body onload="GetWordTables()">
+  <div id="info_container">
+    <div id="info">
+      <button id="info_button" onclick="ShowHideInfo()" style="animation-name:show_info;">Expand help</button>
+      <p class="infotext">Enter a word or phrase in Dutch, followed by the accepted English translations. Then select the unit that the word or phrase belongs to, before adding it to the database. Unit 1 is selected by default. After the word is added, the page will refresh with the updated word table.</p>
+      <p class="infotext">All colums in the table can be edited manually. Remember to click "Save Changes", or else the changes you made will not be saved in the database.</p>
+      
+    </div>
+    
+  </div>
+  
+<div id="page_container"></div>
+  <div class="banner"></div>
+    <div id="function_container">
+        <div id="function_modal_container">
+          <div id="add_word_container">
+            <form action="/auth/insertword" method="post">
+              <label for="word">Word:</label><br>
+              <input type="text" class="admininput" id="word" name="word" value="" placeholder="Enter word/phrase"><br>
+              <label for="type">Type:</label><br>
+              <select name="type" id="type">
+                <option value="word">word</option>
+                <option value="phrase">phrase</option>
+              </select><br>
+              <label for="translations">Translations:</label><br>
+              <input type="text" class="admininput" id="translations" name="translations" value="" placeholder="translation1,translation2"><br>
+              <label for="unit">Unit:</label>
+              <select name="unit" id="unit">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
+              <input type="submit" id="addword" value="Add word">
+            </form> 
+          </div>
+          <div id="function_modal">
+
+          </div>
+        </div>
+        
+        <div id="table_filter_container">
+            <input type="search" class="admininput" oninput="FilterWords()" id="filter" name="filter" value="" placeholder="Filter by word">
+            <button id="save_button" onclick="SaveTableChanges()">Save Changes</button>
+            <a href="/"><button id="back_to_game_button">Back to game</button></a>
+            <div id="table_container">
+              <p id="last_save_date"></p>
+              <table id="word_table">
+                
+              </table>
+            </div>
+            
+        </div>
+        
+    </div>
+  <div class="banner"></div>
+
+ <script src="/builder.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+  <nav class="navbar">
+    <ul>
+        <a href="/auth/admin" class="navlink">Admin</a>
+        <a href="/auth/login" class="navlink">Login</a>
+    </ul>
+</nav>
+<body onload="FirstStart()" >
+  <div id="big_container">
+      <div id="scoreboard_container">
+        <div id="game_score">
+          1923845
+        </div>
+        <div id="scoreboard">
+          <p id="scoreboard_matched" class="score">0</p>
+          <p id="scoreboard_lost" class="score">0</p>
+        </div>
+          <div id="last_word_holder">
+          <p id="last_word"> </p>
+        </div>
+     </div>
+     <div id="container">
+        <canvas id="game" width="1000px" height ="400px"></canvas>
+        <div id ="text_container">
+          <p id="play_button" class="hotbar" onclick="Play()">Play</p>
+          <p id="pause_button" class="hotbar"
+          onclick="Pause()">Pause</p>
+        </div>
+       <div id="unit_selector">
+        
+        <div class="unit_holder">
+        <label for="unit_1">Unit 1</label>
+        <input type="checkbox" class="checkbox" name="1" id="unit_1" onchange="UpdateGameWords()">
+        </div>
+        <div class="unit_holder">
+        <label for="unit_2">Unit 2</label>
+        <input type="checkbox" class="checkbox" name="2" id="unit_2" onchange="UpdateGameWords()">
+        </div>
+        <div class="unit_holder">
+        <label for="unit_3">Unit 3</label>
+        <input type="checkbox" class="checkbox" name="3" id="unit_3" onchange="UpdateGameWords()">
+        </div>
+        <div class="unit_holder">
+        <label for="unit_4">Unit 4</label>
+        <input type="checkbox" class="checkbox" name="4" id="unit_4" onchange="UpdateGameWords()">
+        </div>
+        <div class="unit_holder">
+        <label for="unit_5">Unit 5</label>
+        <input type="checkbox" class="checkbox" name="5" id="unit_5" onchange="UpdateGameWords()">
+        </div>
+        <div class="unit_holder">
+        <label for="unit_6">Unit 6</label>
+        <input type="checkbox" class="checkbox" name="6" id="unit_6" onchange="UpdateGameWords()">
+        </div>
+        <div class="unit_holder">
+        <label for="unit_7">Unit 7</label>
+        <input type="checkbox" class="checkbox" name="7" id="unit_7" onchange="UpdateGameWords()">
+        </div>
+        <div class="unit_holder">
+        <label for="unit_8">Unit 8</label>
+        <input type="checkbox" class="checkbox" name="8" id="unit_8" onchange="UpdateGameWords()">
+        </div>
+       </div>
+    </div>
+    <div id="highscores">HIGHSCORES
+      <div id="highscoresinner"></div>
+    </div>
+  </div>
+  <div id="help_container">
+         <p id="help">Type the translation of the word (Dutch/English) to gain fuel from the clouds and continue your air balloon adventure! Don't miss too many, or your balloon will run out of fuel! (o.o)('')</p>
+       </div>
+ 
+  <img src="https://i.imgur.com/XHWTNyN.jpg" alt=""id="bg" hidden>
+  <img src="https://i.imgur.com/tX6Wmpz.png" alt="" id="bg_clouds" hidden>
+  <img src="https://i.imgur.com/naQ20cH.png" hidden id="cloud_scroll" alt="">
+  <img src="https://i.imgur.com/Le479eE.png" hidden id="char_sprite" alt="">
+  <img src="https://i.imgur.com/6iDZitJ.png" hidden id="word_bubble" alt="">
+  <img src="https://i.imgur.com/L7GjdLl.png" hidden id="phrase_sprite" alt="">
+<script src="lib.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
